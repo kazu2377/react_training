@@ -1,23 +1,24 @@
 // src/App.js
 import React, { Component } from "react";
-import { Switch, Route, Redirect, Link } from "react-router-dom";
-//import Ranking from "./components/Ranking";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Ranking from "./containers/Ranking";
-import Nav from "./containers/Nav"; // 追加
+import Nav from "./containers/Nav";
 import Reboot from "material-ui/Reboot"; // 追加
 import AppBar from "material-ui/AppBar"; // 追加
 import Toolbar from "material-ui/Toolbar"; // 追加
 import Typography from "material-ui/Typography"; // 追加
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div className="App" style={{ paddingLeft: 240 }}>
-        {/* 差し替え */}
+        {" "}
+        {/* styleを追加 */}
+        {/* Rebootを追加 */}
         <Reboot />
-
         {/* ページタイトルを追加 */}
         <AppBar style={{ left: 240 }}>
+          {" "}
           {/* styleを追加 */}
           <Toolbar>
             <Typography type="title" color="inherit">
@@ -25,9 +26,7 @@ export default class App extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-
         <Nav />
-
         {/* div要素を追加してstyleを指定 */}
         <div style={{ marginTop: 64, padding: 32 }}>
           <Switch>
@@ -44,4 +43,4 @@ export default class App extends Component {
   }
 }
 
-
+export default App;

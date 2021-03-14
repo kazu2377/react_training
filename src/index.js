@@ -7,8 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 import { ConnectedRouter } from "react-router-redux"; // 追加
 import createStore from "./createStore"; // 追加
 import { Provider } from "react-redux"; // 追加
-//import createBrowserHistory from "history/createBrowserHistory"; // 追加
-import createBrowserHistory from "history/createHashHistory"; // 追加
+import createBrowserHistory from "history/createBrowserHistory"; // 追加
+//import createBrowserHistory from "history/createHashHistory"; // 追加
 
 // import { createStore, combineReducers, applyMiddleware } from "redux"; // 追加
 // import logger from "redux-logger"; // 追加
@@ -51,8 +51,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
