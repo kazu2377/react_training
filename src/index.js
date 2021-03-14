@@ -7,7 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 import { ConnectedRouter } from "react-router-redux"; // 追加
 import createStore from "./createStore"; // 追加
 import { Provider } from "react-redux"; // 追加
-import createBrowserHistory from "history/createBrowserHistory"; // 追加
+//import createBrowserHistory from "history/createBrowserHistory"; // 追加
+import createBrowserHistory from "history/createHashHistory"; // 追加
 
 // import { createStore, combineReducers, applyMiddleware } from "redux"; // 追加
 // import logger from "redux-logger"; // 追加
