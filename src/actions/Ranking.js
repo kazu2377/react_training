@@ -4,7 +4,7 @@ import qs from "qs";
 import { replace } from "react-router-redux"; // 追加
 
 const API_URL =
-  "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categoryRanking";
+  "//shopping.yahooapis.jp/ShoppingWebService/V1/json/categoryRanking";
 const APP_ID = "dj00aiZpPWE4SGZQNHoxNWlhVSZzPWNvbnN1bWVyc2VjcmV0Jng9ZWM-";
 
 // categoryをpayloadに含むように修正
