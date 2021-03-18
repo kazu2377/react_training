@@ -8,6 +8,8 @@ import AppBar from "material-ui/AppBar"; // 追加
 import Toolbar from "material-ui/Toolbar"; // 追加
 import Typography from "material-ui/Typography"; // 追加
 
+import Login from "./components/Login"; // 追加 3/16
+
 class App extends Component {
   render() {
     return (
@@ -30,6 +32,8 @@ class App extends Component {
         {/* div要素を追加してstyleを指定 */}
         <div style={{ marginTop: 64, padding: 32 }}>
           <Switch>
+            {/* <Route path="/" component={Login} /> */}
+
             <Route path="/all" component={Ranking} />
             <Route path="/category/1" render={() => <Redirect to="/all" />} />
             <Route

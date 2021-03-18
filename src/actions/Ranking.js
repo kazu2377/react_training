@@ -41,9 +41,15 @@ export const fetchRanking = (categoryId) => {
       category_id: categoryId,
     });
     try {
+      //const responce = await fetchJsonp(`${API_URL}?${queryString}`);
       const responce = await fetchJsonp(`${API_URL}?${queryString}`);
+      const response2 = await fetch("/users/500")
+        .then((response) => response.json())
+        .then((data) => data);
+
       const data = await responce.json();
-      console.log(data);
+
+      console.log(response2);
       dispatch(receiveData(category, null, data)); // categoryIdからcategoryに変更
     } catch (err) {
       dispatch(receiveData(category, err)); // categoryIdからcategoryに変更

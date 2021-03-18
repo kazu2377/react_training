@@ -34,6 +34,7 @@
       "react-app/jest"
     ]
   },
+  // "homepage": "https://kazu2377.github.io/react_training/",
   "browserslist": {
     "production": [
       ">0.2%",

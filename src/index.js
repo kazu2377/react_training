@@ -10,6 +10,24 @@ import { Provider } from "react-redux"; // 追加
 import createBrowserHistory from "history/createBrowserHistory"; // 追加
 //import createBrowserHistory from "history/createHashHistory"; // 追加
 
+import { setupWorker, rest } from 'msw'
+
+
+const worker = setupWorker(
+  rest.get('/users/:userId', (req, res, ctx) => {
+    const { userId } = req.params
+    return res(
+      ctx.json({
+        id: userId,
+        firstName: 'John',
+        lastName: 'Maverick',
+      }),
+    )
+  }),
+)
+worker.start()
+
+
 // import { createStore, combineReducers, applyMiddleware } from "redux"; // 追加
 // import logger from "redux-logger"; // 追加
 
@@ -38,11 +56,17 @@ const history = createBrowserHistory();
 // Storeの生成
 const store = createStore(history);
 
+// if (process.env.NODE_ENV === 'development') {
+//   const { worker } = require('./mocks/browser')
+//   worker.start()
+// }
+
+
 ReactDOM.render(
   <Provider store={store}>
     {/*
       Linkコンポーネントなどが動作するように
-      react-router-domのRouterではなく
+      react-router-domのRｗouterではなく
       react-router-reduxのConnectedRouterを使う
     */}
     <ConnectedRouter history={history}>
