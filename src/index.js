@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.compiled.css";
 import App from "./App";
 import TodoList from "./TodoList";
 import reportWebVitals from "./reportWebVitals";
@@ -10,23 +10,21 @@ import { Provider } from "react-redux"; // 追加
 import createBrowserHistory from "history/createBrowserHistory"; // 追加
 //import createBrowserHistory from "history/createHashHistory"; // 追加
 
-import { setupWorker, rest } from 'msw'
-
+import { setupWorker, rest } from "msw";
 
 const worker = setupWorker(
-  rest.get('/users/:userId', (req, res, ctx) => {
-    const { userId } = req.params
+  rest.get("/users/:userId", (req, res, ctx) => {
+    const { userId } = req.params;
     return res(
       ctx.json({
         id: userId,
-        firstName: 'John',
-        lastName: 'Maverick',
-      }),
-    )
-  }),
-)
-worker.start()
-
+        firstName: "John",
+        lastName: "Maverick",
+      })
+    );
+  })
+);
+//worker.start();
 
 // import { createStore, combineReducers, applyMiddleware } from "redux"; // 追加
 // import logger from "redux-logger"; // 追加
@@ -60,7 +58,6 @@ const store = createStore(history);
 //   const { worker } = require('./mocks/browser')
 //   worker.start()
 // }
-
 
 ReactDOM.render(
   <Provider store={store}>

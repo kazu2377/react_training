@@ -43,10 +43,14 @@ export const fetchRanking = (categoryId) => {
     try {
       //const responce = await fetchJsonp(`${API_URL}?${queryString}`);
       const responce = await fetchJsonp(`${API_URL}?${queryString}`);
+      // const response2 = await fetch("/users/500")
+      //   .then((response) => response.json())
+      //   .then((data) => data);
+
       const response2 = await fetch("/users/500")
         .then((response) => response.json())
         .then((data) => data);
-
+        
       const data = await responce.json();
 
       console.log(response2);
